@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Welcome Page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=WindSong:wght@500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+      }
+      body {
+        background-color: #d78a76;
+      }
+      html,
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      h1 {
+        font-family: "WindSong", cursive;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+      }
+      p {
+        font-family: "Funnel Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+      h2 {
+        font-family: "Funnel Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+      }
+      .welcome p {
+        max-width: 90%;
+        width: 500px;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .welcome h2 {
+        margin-top: 50px;
+        font-size: 1.5rem;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1000px;
+      }
+      .imgs {
+        width: 25%;
+        min-width: 200px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+      }
+      .imgs img {
+        width: 100%;
+        height: auto;
+        border: 8px solid white;
+      }
+      .text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 25px;
+        width: 500px;
+        min-height: 250px;
+        text-align: center;
+      }
+      .text p {
+        width: 100%;
+      }
+      .left {
+        transform: rotate(-10deg);
+      }
+      .right {
+        transform: rotate(10deg);
+      }
+      .footer {
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 1rem;
+        color: white;
+      }
+      @media (max-width: 1200px) {
+        .content {
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+        }
+        .imgs {
+          width: 80%;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .text {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container welcome">
+      <h1>Welcome Text</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+        asperiores molestias impedit ipsum sed, atque sunt voluptates velit
+        consequatur dolore nulla iusto nesciunt hic. Ratione praesentium aut ex
+        nesciunt molestiae?
+      </p>
+      <h2>Scroll down</h2>
+    </div>
+    <div id="content-wrapper"></div>
+    <div class="footer"><p>Made with ❤️ by Lucas Feodrippe</p></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contentData = {
+          0.1: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis cumque adipisci facere quas corporis maxime!",
+          0.2: "Another text for section 0.2, describing something different.",
+          0.3: "Content for section 0.3 with more details.",
+          0.4: "More information about 0.4, keeping it structured.",
+          0.5: "Interesting facts about 0.5, keeping the pattern consistent.",
+          0.6: "Something important regarding section 0.6.",
+          0.7: "Useful insights for section 0.7.",
+          0.8: "Content explaining the section 0.8 details.",
+          0.9: "Final remarks about section 0.9.",
+          "1.0": "The last section with its specific content.",
+        };
+
+        const container = document.getElementById("content-wrapper");
+
+        Object.entries(contentData).forEach(([key, text], index) => {
+          const content = document.createElement("div");
+          content.className = "container content";
+          content.innerHTML = `
+      <div class="imgs">
+        <img class="left" src="./${index + 1}_1.jpg" alt="" />
+        <img class="right" src="./${index + 1}_2.jpg" alt="" />
+      </div>
+      <div class="text">
+        <h1>${key}</h1>
+        <p>${text}</p>
+      </div>
+      <div class="imgs">
+        <img class="right" src="./${index + 1}_3.jpg" alt="" />
+        <img class="left" src="./${index + 1}_4.jpg" alt="" />
+      </div>
+    `;
+          container.appendChild(content);
+        });
+      });
+    </script>
+  </body>
+</html>
