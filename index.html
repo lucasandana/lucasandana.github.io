@@ -1,164 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Welcome Page</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=WindSong:wght@500&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        color: white;
-      }
-      body {
-        background-color: #d78a76;
-      }
-      html,
-      body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-      .container {
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-      }
-      h1 {
-        font-family: "WindSong", cursive;
-        font-size: 3rem;
-        font-weight: 500;
-        text-align: center;
-      }
-      p {
-        font-family: "Funnel Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-      }
-      h2 {
-        font-family: "Funnel Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 800;
-        font-style: normal;
-      }
-      .welcome p {
-        max-width: 90%;
-        width: 500px;
-        text-align: center;
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-      .welcome h2 {
-        margin-top: 50px;
-        font-size: 1.5rem;
-      }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Welcome Page</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=WindSong:wght@500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    body {
+      background-color: #d78a76;
+    }
+
+    html,
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: "WindSong", cursive;
+      font-size: 3rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    p {
+      font-family: "Funnel Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    h2 {
+      font-family: "Funnel Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .welcome p {
+      max-width: 90%;
+      width: 500px;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: "Special Gothic Expanded One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .welcome h2 {
+      margin-top: 50px;
+      font-size: 1.5rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 1000px;
+    }
+
+    .imgs {
+      width: 25%;
+      min-width: 200px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .imgs img {
+      width: 100%;
+      height: auto;
+      border: 8px solid white;
+    }
+
+    .text {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 25px;
+      width: 350px;
+      min-height: 250px;
+      text-align: center;
+    }
+
+    .text p {
+      width: 100%;
+      font-size: 24px;
+      font-family: "Delius", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .end p {
+      font-family: "Special Gothic Expanded One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .left {
+      transform: rotate(-10deg);
+    }
+
+    .right {
+      transform: rotate(10deg);
+    }
+
+    .footer {
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 1rem;
+      color: white;
+    }
+
+    @media (max-width: 1200px) {
       .content {
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        margin-top: 1000px;
+        gap: 30px;
       }
+
       .imgs {
-        width: 25%;
-        min-width: 200px;
-        height: auto;
-        display: flex;
+        width: 80%;
         flex-direction: column;
-        justify-content: space-between;
-        gap: 50px;
+        gap: 10px;
       }
-      .imgs img {
-        width: 100%;
-        height: auto;
-        border: 8px solid white;
-      }
+
       .text {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        gap: 25px;
-        width: 500px;
-        min-height: 250px;
-        text-align: center;
+        width: 90%;
       }
-      .text p {
+    }
+
+    /* Big text section styles */
+    .big-text-container {
+      width: 100%;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .big-text-container p {
+      max-width: 90%;
+      width: 800px;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+
+    /* Image grid styles */
+    .image-grid-container {
+      width: 100%;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .image-grid-title {
+      margin-bottom: 40px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 8px solid white;
+    }
+
+    /* Responsive styles for the image grid */
+    @media (max-width: 768px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .big-text-container p {
         width: 100%;
-      }
-      .left {
-        transform: rotate(-10deg);
-      }
-      .right {
-        transform: rotate(10deg);
-      }
-      .footer {
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
         font-size: 1rem;
-        color: white;
       }
-      @media (max-width: 1200px) {
-        .content {
-          flex-direction: column;
-          align-items: center;
-          gap: 30px;
-        }
-        .imgs {
-          width: 80%;
-          flex-direction: column;
-          gap: 10px;
-        }
-        .text {
-          width: 90%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container welcome">
-      <h1>Welcome Text!</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-        asperiores molestias impedit ipsum sed, atque sunt voluptates velit
-        consequatur dolore nulla iusto nesciunt hic. Ratione praesentium aut ex
-        nesciunt molestiae?
-      </p>
-      <h2>Scroll down</h2>
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container welcome">
+    <h1>Nossas lembranças eternizadas!!</h1>
+    <p>
+      Nossos presentes até hoje foram incríveis e cada um melhor que o outro, presentes que fizeram nossos corações
+      apertarem de emoção em cada momento de cada mês...<br><br> Seus desenhos são os melhores presentes que eu já
+      recebi em toda minha vida. Seu presente é extramamente caro e valioso, exclusivamente pelo fato do tempo e
+      dedicação gasto... Esse sim é o real valor de carinho pelo próximo! Muito mais valorizado do que comprar um
+      produto e entregar...<br><br> Tenho orgulho de olhar todo dia pra parede do meu computador e ver suas cartinhas,
+      desenhos, minha canequinha... Você merece TUDO nesse mundinho, e eu estarei ao seu lado pra conquistarmos todas
+      nossas metas e concretizar nossa idealização de uma futura família ideal!<br><br> Espero que goste dessa
+      lembracinha e sinta cada mês como uma bela recordação do início de nossa história!
+    </p>
+    <h2>Scroll down</h2>
+  </div>
+  <div id="content-wrapper"></div>
+  <div class="container">
+    <div class="text">
+      <div class="end">
+        <p style="font-size: 1rem; line-height: 1.6; text-align: center; max-width: 800px; margin-bottom: 50px;">
+          Infelizmente não é possível descrever tudo o que eu gostaria de lhe passar como mensagem em um simples texto
+          ou
+          em poucas palavras. Tenho orgulho de olhar pra trás e reconhecer todas nossas lutas, todos os desafios que
+          conseguimos superar com persistência, mudanças e reconhecimento dos erros, onde nosso orgulho é próximo de
+          nulo.
+          <br><br>
+          Reconheço que você me ensinou muita coisa e que foi um dos maiores catalisadores pra minha melhoria como
+          pessoa
+          e o incentivo para eu transformar meus antigos hábitos em apenas histórias do meu passado.
+          <br><br>
+          De longe essa é a melhor relação amorosa e de amizade em que eu já tive, amo nossa conexão, nosso
+          entendimento,
+          nossa maneira de conseguir conversar e resolver qualquer problema... Claro que temos bastante coisa à ser
+          aprimorada, pois querendo ou não somos apenas jovens saindo da adolescência e conhecendo o mundo real agora.
+          Aprendizado nunca é demais e infelizmente não somos donos da razão...
+          <br><br>
+          Acredito que o verdadeiro significado do amor é a capacidade de querer evoluir consigo mesmo influenciando na
+          consequência da melhoria da relação. Mudar o que for preciso, deixar hábitos que não são congruentes à
+          felicidade do casal por um todo, e sempre tentar e se esforçar à entender o que o outro sente... Porque só nós
+          dois sabemos o quão difícil alguns dias podem ser.
+          <br><br>
+          Há dias em que passamos por MUITO stress e por final acábamos por ser grosso um aooutro sem perceber. Há dias
+          em
+          que estamos um pouco mais pra baixo por algum cansaço da rotina ou por algum problema em específico, mas o que
+          importa é ter lá no fundo a noção do critério de que.. Quando tiverem dias em que um de nós estiver com apenas
+          com 10% da saúde mental e emocional em jogo, o outro deve jogar os outros 90% e vice versa... Caso ambos
+          estejam
+          com porcentagens muitos baixas, apenas pelo fato de respeitar e entender que é um dia ruim, já é o alcance dos
+          100%
+          <br><br>
+          Nosso potêncial é enorme e supera qualquer mal olhado ou obstáculos que tivermos em nosso caminho. Você foca
+          em
+          você, eu estou focando em mim, estamos mirando no nosso futuro e iremos caminhar juntos nessa... Um apoiando o
+          outro e construindo a ponte mais resistente possível! Nunca vou cansar de me expressar pra você, por mais que
+          ultimamente esteja um pouco mais complicado. Mas o que eu sempre digo? Em outras palavras, a vida é a
+          definição
+          de D I N Â M I C A, tudo é baseado em Fases e momentos... Há pontos máximos e mínimos no gráfico da vida. Oque
+          de fato preserva o namoro é não nos largarmos em momentos difíceis deixando a raiva tomar conta. Só nos
+          sabemos
+          o quão forte e única é a nossa intimidade...
+          <br><br>
+          Minha meta é chegar no futuro quando estivermos em nossa casa, com nossa filhinha prestes à nascer e pegarmos
+          todos esses presentes que temos até hoje e dizer. Nós conseguimos. NÓS CONSEGUIMOS PORRA... E eu vou querer
+          esse quadro com o qr code na nossa casa, pra ser uma inspiração e sempre lembrarmos do nosso início, da nossa
+          caminhada.
+          <br><br>
+          Oh meu amor, eu sou tão feliz com você... Prometo que continuarei dando o meu máximo pra conseguirmos de fato
+          oficializar todas nossas metas! E obrigado por reativar o meu brilho de querer mudar e melhorar cada vez mais,
+          por mesmo saber das coisas que eu passo em casa sempre estar disposta a me ouvir e me acolher...<br><br> Você será A
+          arquiteta, a mais procurada do estado do Rio de Janeiro e em um futuro depois de alguns anos na área, umas das
+          mais renomadas do Brasil!!! E em minha mente, a certeza que tive que você vai passar na uff é exatamente a
+          mesma que eu tenho que você irá fazer seu intercâmbio pela Uff!!!! Você é uma baita duma mulher inteligente e
+          com um potêncial gigantesco, sabemos no fundo que o que você Q U I S E R, por mais distante que seja da
+          realidade, você consegue!<br><br> Da mesma maneira sei que eu serei um Engenheiro bem renomado no mercado, e vou
+          conseguir sim passar em um concurso público e trabalhar embarcado! Iremos construir nossa casa da maneira que
+          quisermos. O projeto é por sua parte e toda a elétrica é por minha! ( convenhamos que tenho umas ideias um
+          pouco malucas, logo nossa casa será diferenciada rsrsrs )<br><br>
+          Enfim, eu espero que tenha gostado e que guarde isso com o coração. Quando sentir alguma coisa, volte aqui no
+          site e venha ver nossas fotos e nossas recordações!
+          <br><br><br>
+          É apenas o início.....  Eu te amo, minha aninha
+          <br>
+            Com muito carinho, ❤️ Lucas feodrippe.
+        </p>
+      </div>
     </div>
-    <div id="content-wrapper"></div>
-    <div class="footer"><p>Made with ❤️ by Lucas Feodrippe</p></div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const contentData = {
-          0.1: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis cumque adipisci facere quas corporis maxime!",
-          0.2: "Another text for section 0.2, describing something different.",
-          0.3: "Content for section 0.3 with more details.",
-          0.4: "More information about 0.4, keeping it structured.",
-          0.5: "Interesting facts about 0.5, keeping the pattern consistent.",
-          0.6: "Something important regarding section 0.6.",
-          0.7: "Useful insights for section 0.7.",
-          0.8: "Content explaining the section 0.8 details.",
-          0.9: "Final remarks about section 0.9.",
-          "1.0": "The last section with its specific content.",
-        };
+  </div>
 
-        const container = document.getElementById("content-wrapper");
 
-        Object.entries(contentData).forEach(([key, text], index) => {
-          const content = document.createElement("div");
-          content.className = "container content";
-          content.innerHTML = `
+  <div class="image-grid"
+    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; justify-items: center;">
+    <!-- 40 images, 2 columns x 20 rows -->
+    <img src="end_1.jpg" alt="Image 1" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_2.jpg" alt="Image 2" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_3.jpg" alt="Image 3" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_4.jpg" alt="Image 4" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_5.jpg" alt="Image 5" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_6.jpg" alt="Image 6" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_7.jpg" alt="Image 7" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_8.jpg" alt="Image 8" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_9.jpg" alt="Image 9" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_10.jpg" alt="Image 10" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_11.jpg" alt="Image 11" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_12.jpg" alt="Image 12" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_13.jpg" alt="Image 13" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_14.jpg" alt="Image 14" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_15.jpg" alt="Image 15" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_16.jpg" alt="Image 16" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_17.jpg" alt="Image 17" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_18.jpg" alt="Image 18" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_19.jpg" alt="Image 19" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_20.jpg" alt="Image 20" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_21.jpg" alt="Image 21" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_22.jpg" alt="Image 22" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_23.jpg" alt="Image 23" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_24.jpg" alt="Image 24" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_25.jpg" alt="Image 25" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_26.jpg" alt="Image 26" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_27.jpg" alt="Image 27" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_28.jpg" alt="Image 28" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_29.jpg" alt="Image 29" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_30.jpg" alt="Image 30" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_31.jpg" alt="Image 31" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_32.jpg" alt="Image 32" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_33.jpg" alt="Image 33" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_34.jpg" alt="Image 34" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_35.jpg" alt="Image 35" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_36.jpg" alt="Image 36" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_37.jpg" alt="Image 37" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_38.jpg" alt="Image 38" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_39.jpg" alt="Image 39" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+    <img src="end_40.jpg" alt="Image 40" style="width: 100%; max-width: 200px; border: 8px solid white;" />
+  </div>
+
+  <div class="footer">
+    <p>Made with ❤️ by Lucas Feodrippe</p>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const contentData = {
+        0.1: "Onde tudo começou... Ter entrado na UERJ e lhe pedido em namoro foram as melhores conquistas de 2024 sem sobra de dúvidas. Aquele dia em que fomos jogar uma sinuca no bar, o dia que combinei tudo com sua mãe 1 mes antes, quando estava tocando sweater weather e arabella...<br><br> O momento em que você entra no quarto e tem o surto mais excêntrico já captado pelos meus olhos... ( Também o mês em que fomos no shopping sg com meus pais comer torresmo hihihihi. Apenas o início da nossa linda jornada...<br><br> Lembro tão bem de você mega ansiosa e nervosa não sabendo o que fazer pra conversar com meus pais KKKKKKKKK inclusive meu pai ainda vai conversar muuuito sobre política e bolsonaro com você hein... rsrsrs",
+        0.2: "Moro no rio desde meu primeiro mês de vida e nunca tinha ido ao pão de açucar, e adivinha com quem foi minha primeira vez... Cada momento está codificado em minha mente. Aquela sodinha de maça verde,  o show de eletrônica, a castanha caramelizado que eu queria muito comprar mas estava cheio de abelha....<br><br> O macaquinho do nosso lado junto com aquele pássaro exótico enquanto estávamos almoçando. Eu te abraçando naquela vista incrível e pensando no quão certeiro eu fui na minha escola.<br><br> ( No carro aquela foto que eu odeio... que é impossível eu colocar aqui KKKKKKK ). E também nesse mesmo mês você tirou meus pelinhos da cara na gilete a primeira vez KKKKK achei muito fofo.",
+        0.3: "Meu deus, eu sinto MUITA FALTA desse mês. Tivemos um dos melhorias dias de 'role' que tivemos juntos. No dia em que fizemos a trilha na boa viagem! Você cheia de medo e eu olhei pra você e disse: Pode confiar em mim, meu amor. E você foi e tudo deu tão certo... Comemos japonês, vimos o por do sol, tiramos muitas fotinhas lindas e tivemos vários papos profundos como amamos ter! Tambem fomos ao moccelin com seus pais e tiramos essa foto clássica com minha camisa azul e seu vestido amarelo ( eu olho pra essa foto e vejo o nosso início KKKKK ) Sem contar também com o dia no seu condomínio em que eu dei uma PALESTRA de como ser melhor que você fazendo pizza KKKKKKKKKKK. Relaxa, não fica triste que um dia te ensino o molho.",
+        0.4: "O mês com duas datas mega comemoratívas!!!! Seu aniversário, em que nas duas festas eu olhei pra você com o mesmo olho da formatura ( eu não conseguia não sentir meu peito gelado olhando pra você meu deus parecia que tava me apaixonando a primeira vista KKKKKK ( sério vc estava absurdamente linda))<br><br>  E também o diazinho dos namorados!!! Que consegui achar a tulipinha que você é encantada e tivemos um jantar muito perfeito patrocinado pela minha sogra perfeita! Um verdadeiro jantar à luz de velas... bebendo aquela bebida de guaraná que vc gostou MUITO mais que eu KKKKKKKKK.<br><br> É um sentimento muito bom digitar todas essas coisas relembrando de tudo, sabe? Fico sorrindo o tempo todo e as vezes pareço começar a emocionar... KKKKKK.",
+        0.5: "Esse mês não foi tããããão bom... ( VOCÊ FICOU 2 SEMANAS FORAAAA ) aaaaaaaa, olha a fotinha ao lado, a gente na garagem nos despedindo :(( Mas também não foi apenas momentos de saudades, tivemos esse dia no marília em que dançamos lá na rodinha, ( essa foto eu sou apaixonado KKKKKKK lembra que eu tava surtando com vontade de apertar sua bochecha enquanto dava comida na sua boca e vc ficava me olhando com AQUELA carinha )<br><br> E pra não ficarmos apenas na saudade botei essa minha foto na sua cama no dia em que você chegou de viagem, eu tranquilasso no conforto muahahahah.",
+        0.6: "Lembra quando fomos alí na concha acústica com seus pais assistir o teatro que seu pai amava? Esse dia foi MUITO maneiro, muito muito muito mesmo! foi uma experiência bem diferente do comum e ainda mais num lugar lindo demais! Ainda fomos jantar alí na coisa da uff----> fotinha ao lado rs.<br><br> Também fui 2 finais de semanas seguidos ao seu condomínio, Lembro que a gente jogou imagem e ação com seus pais e seus irmãos ( Na época estávamos maratonando séries ( acho que foi breaking... :) ))<br><br> Sem contar que também fizemos aquele brownie que não deu tãaaaao certo.... KKKKKKKK talvez tenha queimado um pouquiiiinho, mas sua mãe salvou na calda de brigadeiro! ( Não foi culpa minha que queimou emmmmm, não foram as MINHAS habilidades em jogo rsrsrs )",
+        0.7: "É incrível a percepção da fisionomia dos nossos sorrisos quando estamos juntos, NUNCA é algo forçado apenas pra tirar foto, é muito mais que uma simples risada, é uma conexão forte que sempre existiu mas foi apenas aprimorada e conectada deesde 2023...<br><br> Doideira demais pensar que a aninha e o feo do ensino médio, que sempre implicavam um com o outro, sempre discutiam feio na sala de aula estão namorando hoje e dia e agora tem um SITE SÓ DELES KKKKKKKK.<br><br> Você amooou as rosas que lhe dei nesse dia, ficou toooda bobinha pulando e batendo palma quando viu... Essas suas reações são extremamente únicas, meu amor <3<br><br> E também possívelmente essa foi a minha primeira vez indo nessa hidro com você... Muito boa por sinal KKKKKKK.<br><br> Além desses dias, conhecemos aquela pizzaria aqui no ingá que tinha aquela calabresa com um gostinho diferenciado... KKKKKK mas o lugar era muuuito lindo e a gente  ia passar lá denovo em alguma comemoração dos nossos dias!",
+        0.8: "Melhor aniversário que eu já tive?  () óbvio     (x) definitivamente sem quaisquer circunstâncias de dúvidas. Acho que meu sorriso te abraçando com o pé de pato na mão ja diz tudo...<br><br> Eu me emocionei, me senti importante, sabe? Amei a surpresa que você e seus pais fizeram. E de verdade, seus pais me surpreenderam MUITO, eu fiquei tão tão tão feliz naquele dia que eu não sabia nem como agradecê-los!<br><br> Sem contar com o perfume que me deram que é SENSACIONAL que uso sempre quando vou sair KKKKKK.<br><br> O dia do teteu... Aiai,Dispensa apresentações KKKKKKKK. Me surpreendeu você conseguir esconder tão bem e segurar a emoção sem fazer eu desconfiar de nada.<br><br> Simplesmente foi um dos melhores meses do nosso namoro e da minha vida, e o dia 11 de outubro de 2024 foi o dia mais inesquecível de todos, o dia por completo foi MARAVILHOSO.<br><br> E pra fechar com chave de ouro ainda tivemos aquela choppada que fomos vestidos de 10 coisas que odeio em você ( guardo o macacão até hoje )<br><br> Obrigado pelos momentos, saiba que independente de tudo eles estão guardados num canto mega específico do meu coração, alma e mente.",
+        "0.9": "Eita... Oque mais marcou nesse mês foi termos descobertos juntos que tinha um museu muito foda em piratininga que não fazíamos idéia que existia KKKKKKKK.<br><br> Fiquei mega encantado observando esse seu vestido lindo lindo que super combinou com você! E esse joguinho das imagens que eu te dei uma verdadeira aula de como se brinca...<br><br> Aiai, esse tal de feofeo sempre amassando a aninha nos joguinhos rss.<br><br> Sem contar com a observação que te falei no dia, que no caso era a existência de jacarés pela aquela lagoa, e vc não acreditou...",
+        "1.0": "Um mês repleto de experiências novas. Nossa primeira viagem em família, onde visitamos praias PARADISÍACAS, tive um contato mais profundo com meus belos sogros, onde nos aventuramos pela pousada...... <br><br>  Também quando fomos ao teatro assistir a apresentaçao da sua irmã!!! que arrasou muito! Uma viagem que certamente me marcou e nunca iremos esquecer.<br><br> Em questão de anos, o papel se inverterá! Nós que iremos levar nossos pais pra passear tudo por nossa conta.",
+        "1.1": "É o mês que passamos nossa primeira virada juntos!!! O ínicio de mais um ano juntos, o sinônimo de esperanças e entusiasmo da melhoria constante...<br><br> Passar os fogos ao seu lado foi um momento único. Estar abraçado com minha futura esposa ao lado dos meus sogros e a família reunída num momento muito muito simbólico é gratificante demais...<br><br> Também foi o mês em que fizemos aquele doce de uva maravilhoooooso demais KKKKKKKK que você amassou na recetinha rsrsrsrs.<br><br> COMO não temos taaantas fotos desse mês, coloquei a pretinha aí de quando eu tinha ido na segunda semana de janeiro rssss."
+      };
+
+      const container = document.getElementById("content-wrapper");
+
+      Object.entries(contentData).forEach(([key, text], index) => {
+        const content = document.createElement("div");
+        content.className = "container content";
+        content.innerHTML = `
       <div class="imgs">
         <img class="left" src="./${index + 1}_1.jpg" alt="" />
         <img class="right" src="./${index + 1}_2.jpg" alt="" />
@@ -172,9 +396,10 @@
         <img class="left" src="./${index + 1}_4.jpg" alt="" />
       </div>
     `;
-          container.appendChild(content);
-        });
+        container.appendChild(content);
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
